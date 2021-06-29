@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+
+.centre_fixed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#form_div {
+    width: 400px;
+    height: 400px;
+    border: 3px solid white;
+}
+
+form {
+    text-align: center;
+    position: relative;
+    height: 100%;
+    background-color: grey;
+}
+
+input[type="password"] {
+    border: 2px solid black;
+    border-radius: 4px;
+}
