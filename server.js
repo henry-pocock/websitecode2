@@ -1,7 +1,9 @@
 // ---- REQUIRES ---- //
-const fs = require("./utils/fs_wrapper"); // Used for interacting with the filesystem
-const crypto = require("crypto");       // Used for generating ids
-const express = require("express");     // Used as the backend for the server
+require("dotenv").config();             // Read secrets from .env
+
+const fs = require("./utils/fs_wrapper");   // Used for interacting with the filesystem
+const crypto = require("crypto");           // Used for generating ids
+const express = require("express");         // Used as the backend for the server
 
 const ERR_HTML = `<!DOCTYPE html><html><head><title>400 Bad Request</title></head><body><h1>400 Bad Request</h1></body></html>`;
 
@@ -21,7 +23,7 @@ app.get("/", async function(req, res) {                                   // GET
 })
 
 let IDS = [];
-const MY_PIN = "xxxxxx";
+const MY_PIN = process.env.SECRET_KEY;
 
 app.post("/auth", async function (req, res) {
     const id = crypto.randomBytes(64).toString("hex");
