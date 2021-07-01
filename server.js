@@ -23,7 +23,8 @@ app.get("/", async function(req, res) {                                   // GET
 })
 
 let IDS = [];
-const MY_PIN = process.env.SECRET_KEY;
+const MY_PIN = process.env.SECRET_KEY_H;
+
 
 app.post("/auth", async function (req, res) {
     const id = crypto.randomBytes(64).toString("hex");
